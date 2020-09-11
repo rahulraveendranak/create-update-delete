@@ -25,7 +25,7 @@ def update(request,product_id):
         form = Productform(request.POST,instance=product)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('list')
     return render(request,'main/update.html',{'form':form,'product':product})
 
 def delete(request,product_id):
